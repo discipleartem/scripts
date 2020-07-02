@@ -1,0 +1,24 @@
+use standart Ubuntu "Startup Aplication" to add script
+
+or
+	sudo apt install gnome-startup-applications
+
+Find aplication using
+
+	which skype
+
+output /snap/bin/skype
+	adding flag -startintray
+
+/snap/bin/skype -startintray
+/snap/bin/telegram-desktop -startintray
+/snap/bin/viber-mtd.viber -startintray
+
+#viber don't run at system tray. Only at open window.
+#https://askubuntu.com/questions/1255770/ubuntu-20-04-how-to-start-viber-mtd-minimized-at-tray
+/snap/bin/viber-mtd.viber
+
+
+
+which skype
+which telegram-desktop
