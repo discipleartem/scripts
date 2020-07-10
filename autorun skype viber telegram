@@ -3,22 +3,62 @@ use standart Ubuntu "Startup Aplication" to add script
 or
 	sudo apt install gnome-startup-applications
 
-Find aplication using
-
-	which skype
-
-output /snap/bin/skype
-	adding flag -startintray
-
-/snap/bin/skype -startintray
-/snap/bin/telegram-desktop -startintray
-/snap/bin/viber-mtd.viber -startintray
-
-#viber don't run at system tray. Only at open window.
-#https://askubuntu.com/questions/1255770/ubuntu-20-04-how-to-start-viber-mtd-minimized-at-tray
-/snap/bin/viber-mtd.viber
-
-
+-----------------------------------------------------
+Find aplication using "which"
 
 which skype
 which telegram-desktop
+
+-----------------------------------------------------
+only telegram starts at tray by "-startintray" flag at "Startup Aplication"
+/snap/bin/telegram-desktop -startintray
+
+
+
+for skype and viber-mtd.viber I find another way:
+https://askubuntu.com/questions/1255770/ubuntu-20-04-how-to-start-viber-mtd-minimized-at-tray
+
+========================================================================================
+sudo apt install devilspie
+
+sudo mkdir ~/.devilspie
+sudo subl ~/.devilspie/viber-minimize.ds
+
+============== Script =================================
+
+(if (is (application_name) "Viber <my_phone_number>")  
+    (begin (minimize))
+)
+============== /Script =================================
+
+sudo chmod 755 ~/.devilspie/viber-minimize.ds
+
+
+
+sudo subl ~/.devilspie/skype-minimize.ds
+
+============== Script =================================
+
+(if (is (application_name) "Skype")  
+    (begin (minimize))
+)
+============== /Script =================================
+sudo chmod 755 ~/.devilspie/skype-minimize.ds
+
+
+
+touch /home/discipleartem/fix_messangers.sh
+============== Script =================================
+#!/usr/bin/env bash
+devilspie &
+/snap/bin/viber-mtd.viber &
+/snap/bin/skype
+============== /Script =================================
+
+sudo chmod 755 /home/discipleartem/fix_messangers.sh
+
+
+`application_name == window_name`
+
+
+========================================================================================
