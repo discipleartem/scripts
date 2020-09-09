@@ -1,0 +1,9 @@
+unmout disk
+
+sudo ntfsfix /dev/sdb3
+
+mount diusk
+
+sudo mount -o remount,rw '/media/$USER/<your_patrition_mount_disk_name>'
+
+sudo chmod 777 /media/$USER/<your_patrition_mount_disk_name>
