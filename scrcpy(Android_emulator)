@@ -1,0 +1,12 @@
+Mobile Emulator
+
+since Ubuntu 20
+
+	sudo apt install scrcpy
+
+run:
+scrcpy -m 1024
+
+#before turn on at mobile:
+#development mode
+#USB debug
