@@ -2,8 +2,8 @@ unmout disk
 
 sudo ntfsfix /dev/sdb3
 
-mount diusk
+mount disk
 
-sudo mount -o remount,rw '/media/$USER/<your_patrition_mount_disk_name>'
+sudo mount -o remount,rw '/media/<username>/<your_patrition_mount_disk_name>'
 
 sudo chmod 777 /media/$USER/<your_patrition_mount_disk_name>
