@@ -2,7 +2,7 @@ Mobile Emulator
 
 since Ubuntu 20
 
-	sudo apt install scrcpy
+	snap install scrcpy
 
 run:
 scrcpy -m 1024
